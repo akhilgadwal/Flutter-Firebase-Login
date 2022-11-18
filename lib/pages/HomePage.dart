@@ -1,4 +1,5 @@
 // ignore: file_names
+import 'package:firebase/pages/Fg_pw.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -106,6 +107,27 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 SizedBox(
+                  height: 10,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return ForgotPasswordPage();
+                    }));
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        'Forgot Password ?',
+                        style: TextStyle(
+                            color: Colors.blue, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
                   height: 15,
                 ),
                 //sign in button
@@ -114,6 +136,7 @@ class _HomePageState extends State<HomePage> {
                   //adding gesturn detection
                   //container
                   child: GestureDetector(
+                    onTap: signIn,
                     child: Container(
                       padding: EdgeInsets.all(20),
                       decoration: BoxDecoration(
